@@ -29,6 +29,9 @@ You need to create a `.env` file with these values set:
 
 ```
 MAILINATOR_API_KEY=
+MAILINATOR_EMAIL_DOMAIN=
+MAILINATOR_EMAIL_SUBJECT=
+MAILINATOR_EMAIL_TO=
 ```
 
 - `MAILINATOR_API_KEY`: Your API key in your mailinator account

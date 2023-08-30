@@ -42,8 +42,8 @@ describe("Forgot Password", () => {
     const fullEmail = `${to}@${emailDomain}`;
 
     // TODO: Debugging variables; delete later
-    const requestPasswordReset = false;
-    const resetPassword = false;
+    const requestPasswordReset = true;
+    const resetPassword = true;
     // End
 
     await ForgotPasswordPage.open();
@@ -73,9 +73,9 @@ describe("Forgot Password", () => {
     // Notes: If there is more than one link in your email, you will need to search for it
     // In this example, we only get one link, so we grab it directly
     if (resetPassword) {
-      await browser.open(linksResponse.result.links[0]);
+      await ResetPasswordPage.open(linksResponse.result.links[0]);
       await ResetPasswordPage.resetPassword("newpassword123", true);
-      await expect(ResetPasswordPage.wasResetSuccessful()).toBe(true);
+      await expect(ResetPasswordPage.wasRequestSuccessful()).toBe(true);
     }
   });
 });
